@@ -20,4 +20,15 @@
     <string name="classify">classify the clothes into top or pants</string>
     <string name="hello_user">Hello User!</string>
     <string name="submit">submit</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="shape">shape</string>
+    <string name="register">register</string>
+    <string name="login">login</string>
+    <string name="email">email</string>
+    <string name="confirm_password">confirm password</string>
+    <string name="regist_text">Let\'s Start Our Journey!</string>
+    <string name="not_have_an_account">Not have an account? </string>
+    <string name="already_have_an_account">Already Have An Account?</string>
 </resources>

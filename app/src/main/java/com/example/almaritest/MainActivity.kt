@@ -30,12 +30,14 @@ class MainActivity : AppCompatActivity() {
                     launchWardrobe()
                     true
                 }
+                R.id.ic_logout -> {
+                    launchLogin()
+                    true
+                }
                 else -> false
             }
         }
         binding.floatingBtn.setOnClickListener { launchAddClothes() }
-
-
 
     }
 
@@ -51,6 +53,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun launchAddClothes() {
         listIntent = Intent(this, AddClothesActivity::class.java)
+        startActivity(listIntent)
+    }
+    private fun launchLogin() {
+        listIntent = Intent(this, LoginActivity::class.java)
         startActivity(listIntent)
     }
 }

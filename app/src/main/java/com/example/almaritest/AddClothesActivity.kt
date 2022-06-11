@@ -8,25 +8,25 @@ import com.example.almaritest.databinding.ActivityAddClothesBinding
 
 class AddClothesActivity : AppCompatActivity() {
 
-    private val REQUEST_IMAGE_CAPTURE = 1
     private lateinit var binding: ActivityAddClothesBinding
     private lateinit var camIntent: Intent
+    private var wordsList: MutableList<String> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddClothesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.submitBtn.setOnClickListener { onSubmitWord() }
+
         binding.addImgButton.setOnClickListener{ launchCamera() }
     }
 
-//    private fun dispatchTakePictureIntent() {
-//        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
-//            takePictureIntent.resolveActivity(packageManager)?.also {
-//                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
-//            }
-//        }
-//    }
+    private fun onSubmitWord() {
+        val clothesTag = binding.textInputEditText.text.toString()
+        wordsList += clothesTag
+    }
+
     private fun launchCamera() {
         camIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         startActivity(camIntent)
