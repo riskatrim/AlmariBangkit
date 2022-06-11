@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Almari</string>
+    <string name="search">search</string>
+    <string name="enter_your_word">input clothes type</string>
+    <string name="add_image">add image</string>
+    <string name="add_your_image">add your image</string>
+    <string name="main_text">what colors do you want to wear today?</string>
+    <string name="colorName">color</string>
+    <string name="recomendations">Recomendations</string>
+    <string name="see_all">see all</string>
+    <string name="morning_daytime">morning_daytime</string>
+    <string name="see_recomendations">see recomendations</string>
+    <string name="home">Home</string>
+    <string name="wardrobe">Wardrobe</string>
+    <string name="add_clothes">Add Clothes</string>
+    <string name="log_out">Log Out</string>
+    <string name="add_button">add button</string>
+    <string name="hi_user">Hi User!</string>
+    <string name="add_clothes_text">Let’s add some more clothes to your wardrobe</string>
+    <string name="classify">classify the clothes into top or pants</string>
+    <string name="hello_user">Hello User!</string>
+    <string name="submit">submit</string>
+</resources>
