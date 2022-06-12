@@ -7,10 +7,10 @@ object DataSource {
 
     val clothes: List<Clothes> = listOf(
         Clothes(
-            R.drawable.morning
+            R.drawable.evening
         ),
         Clothes(
-            R.drawable.evening
+            R.drawable.morning
         )
     )
 }
