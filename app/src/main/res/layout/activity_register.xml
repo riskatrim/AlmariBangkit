@@ -66,14 +66,6 @@
             android:inputType="textPassword"
             app:shapeAppearanceOverlay="@style/cornerRound" />
 
-        <EditText
-            android:id="@+id/confirm_pw"
-            android:layout_width="match_parent"
-            android:layout_height="57dp"
-            android:backgroundTint="@color/white"
-            android:hint="@string/confirm_password"
-            android:inputType="textPassword"
-            app:shapeAppearanceOverlay="@style/cornerRound" />
     </LinearLayout>
 
     <Button
