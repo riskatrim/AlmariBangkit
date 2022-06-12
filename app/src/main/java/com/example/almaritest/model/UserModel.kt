@@ -1,4 +1,4 @@
-package com.example.almaritest
+package com.example.almaritest.model
 
 import java.util.*
 

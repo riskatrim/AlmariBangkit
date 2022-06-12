@@ -1,10 +1,12 @@
 package com.example.almaritest
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.almaritest.database.SQLiteHelper
 import com.example.almaritest.databinding.ActivityRegisterBinding
+import com.example.almaritest.model.UserModel
 
 class RegisterActivity : AppCompatActivity() {
 

@@ -15,6 +15,7 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.almaritest.data.Constants
+import com.example.almaritest.database.SQLiteHelper
 import com.example.almaritest.databinding.ActivityAddClothesBinding
 import java.io.File
 import java.text.SimpleDateFormat

@@ -4,12 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.MenuItem
-import android.view.View
-import com.example.almaritest.adapter.ClothesCardAdapter
-import com.example.almaritest.const.Layout
+import com.example.almaritest.database.SQLiteHelper
 import com.example.almaritest.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 

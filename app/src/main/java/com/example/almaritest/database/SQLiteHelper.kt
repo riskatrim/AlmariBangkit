@@ -1,4 +1,4 @@
-package com.example.almaritest
+package com.example.almaritest.database
 
 import android.annotation.SuppressLint
 import android.content.ContentValues
@@ -6,6 +6,7 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.example.almaritest.model.UserModel
 
 class SQLiteHelper(context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
@@ -28,9 +29,9 @@ class SQLiteHelper(context: Context) :
 
     override fun onCreate(db: SQLiteDatabase?) {
         val createTblUser =
-            ("CREATE TABLE " + TBL_USER + "(" + ID + " INTEGER PRIMARY KEY," + UNAME + " TEXT," + PW + " TEXT," + EMAIL + " TEXT" + ")")
+            ("CREATE TABLE $TBL_USER($ID INTEGER PRIMARY KEY,$UNAME TEXT,$PW TEXT,$EMAIL TEXT)")
         val createTblWardrobe =
-            ("CREATE TABLE " + TBL_WARDROBE + "(" + ID + " INTEGER PRIMARY KEY," + UNAME + " TEXT," + LABEL + " TEXT," + COLOR + " TEXT," + CLOTHES + " IMAGE" + ")")
+            ("CREATE TABLE $TBL_WARDROBE($ID INTEGER PRIMARY KEY,$UNAME TEXT,$LABEL TEXT,$COLOR TEXT,$CLOTHES IMAGE)")
         db?.execSQL(createTblUser)
         db?.execSQL(createTblWardrobe)
     }
@@ -54,6 +55,7 @@ class SQLiteHelper(context: Context) :
         db.close()
         return success
     }
+
     fun insertWardrobe(std: UserModel): Long {
         val db = this.writableDatabase
 
@@ -94,7 +96,7 @@ class SQLiteHelper(context: Context) :
         if (cursor.moveToFirst()) {
             do {
                 id = cursor.getInt(cursor.getColumnIndex("id"))
-                uname = cursor.getString(cursor.getColumnIndex("name"))
+                uname = cursor.getString(cursor.getColumnIndex("uname"))
                 label = cursor.getString(cursor.getColumnIndex("label"))
                 color = cursor.getString(cursor.getColumnIndex("color"))
                 clothes = cursor.getInt(cursor.getColumnIndex("clothes"))
@@ -110,5 +112,29 @@ class SQLiteHelper(context: Context) :
             } while (cursor.moveToNext())
         }
         return stdList
+    }
+
+    fun checkUser(uname: String, password: String): Boolean {
+        val columns = arrayOf(UNAME)
+        val db = this.readableDatabase
+        val selection = "SELECT UNAME, PW FROM $TBL_USER WHERE UNAME = $uname , PW = $password "
+        val selectionArgs = arrayOf(uname, password)
+
+        val cursor = db.query(
+            TBL_USER,
+            columns,
+            selection,
+            selectionArgs,
+            null,
+            null,
+            null
+        )
+        val cursorCount = cursor.count
+        cursor.close()
+        db.close()
+        if (cursorCount > 0)
+            return true
+
+        return false
     }
 }
