@@ -9,6 +9,7 @@
 
     <color name="purple">#3C224A</color>
     <color name="light_purple">#913C224A</color>
+    <color name="grey">#C4C4C4</color>
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>

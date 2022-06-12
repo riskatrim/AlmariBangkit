@@ -31,4 +31,6 @@
     <string name="regist_text">Let\'s Start Our Journey!</string>
     <string name="not_have_an_account">Not have an account? </string>
     <string name="already_have_an_account">Already Have An Account?</string>
+    <string name="gallery">Gallery</string>
+    <string name="image_preview">image_preview</string>
 </resources>

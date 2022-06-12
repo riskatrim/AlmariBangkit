@@ -28,9 +28,9 @@ class SQLiteHelper(context: Context) :
 
     override fun onCreate(db: SQLiteDatabase?) {
         val createTblUser =
-            ("CREATE TABLE $TBL_USER($ID INTEGER PRIMARY KEY,$UNAME TEXT,$PW TEXT,$EMAIL TEXT)")
+            ("CREATE TABLE " + TBL_USER + "(" + ID + " INTEGER PRIMARY KEY," + UNAME + " TEXT," + PW + " TEXT," + EMAIL + " TEXT" + ")")
         val createTblWardrobe =
-            ("CREATE TABLE $TBL_WARDROBE($ID INTEGER PRIMARY KEY,$UNAME TEXT,$LABEL TEXT,$COLOR TEXT,$CLOTHES IMAGE)")
+            ("CREATE TABLE " + TBL_WARDROBE + "(" + ID + " INTEGER PRIMARY KEY," + UNAME + " TEXT," + LABEL + " TEXT," + COLOR + " TEXT," + CLOTHES + " IMAGE" + ")")
         db?.execSQL(createTblUser)
         db?.execSQL(createTblWardrobe)
     }
