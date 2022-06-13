@@ -35,7 +35,6 @@ class LoginActivity : AppCompatActivity() {
                     .show()
 
                 launchMain()
-                finish()
             }
         }
     }
